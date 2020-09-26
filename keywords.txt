@@ -1,0 +1,19 @@
+Joint KEYWORD1
+
+DegreesToSteps KEYWORD2
+SetPines KEYWORD2
+SetRelation KEYWORD2
+SetSpeedRotation KEYWORD2
+SetSoftwareLimits KEYWORD2
+DegreesToSteps KEYWORD2
+CheckSafetyMove KEYWORD2
+AngularMove KEYWORD2
+Shutdown KEYWORD2
+
+Robot KEYWORD1
+
+SetRobotName KEYWORD2
+GetRobotName KEYWORD2
+MaxDegrees KEYWORD2
+SetEndEffector KEYWORD2
+InitEndEffector KEYWORD2
