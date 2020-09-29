@@ -34,7 +34,6 @@ bool Joint::AngularMove(float Old, float New, int steps, int count)
       digitalWrite(_PStep, HIGH);
       delay(_Speed);
       digitalWrite(_PStep, LOW);
-      delay(_Speed);
     }
     return true;
   }
@@ -51,13 +50,13 @@ void Joint::Shutdown()
 
 Robot::Robot() {}
 
-float Robot::MaxDegrees(float p1, float p2, float p3, float p4, float p5, float p6)
+int Robot::MaxDegrees(int Pulsos[6])
 {  
-  float max1, max2, max3, max4;
-  max1=max(p1,p2);
-  max2=max(p3,p4);
-  max3=max(p5,p6);
-  max4=max(max1,max2);
+  int max1, max2, max3, max4;
+  max1 = max(Pulsos[0],Pulsos[1]);
+  max2 = max(Pulsos[2],Pulsos[3]);
+  max3 = max(Pulsos[4],Pulsos[5]);
+  max4 = max(max1,max2);
   return max(max3,max4);
 }
 

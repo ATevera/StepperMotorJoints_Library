@@ -26,7 +26,7 @@ class Joint
     void SetSoftwareLimits(float Min, float Max) { _Min = Min; _Max = Max; }
 
     int DegreesToSteps(float Old, float New);
-    bool CheckSafetyMove (float J);
+    bool CheckSafetyMove(float J);
     bool AngularMove(float Old, float New, int steps, int count);
     void Shutdown();
 };
@@ -42,7 +42,7 @@ class Robot
     String GetRobotName() {return _RobotName;}
     void SetEndEffector(int EndEffector) { _EndEffector = EndEffector; }
 
-    float MaxDegrees(float p1, float p2, float p3, float p4, float p5, float p6);
+    int MaxDegrees(int Pulsos[6]);
     void InitEndEffector();
 };
 #endif
