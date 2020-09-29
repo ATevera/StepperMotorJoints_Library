@@ -7,7 +7,6 @@
 
 #include <Arduino.h>
 #include "r6gController.h"
- 
 Joint::Joint() {}
 
 int Joint::DegreesToSteps(float Old, float New)
