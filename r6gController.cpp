@@ -10,10 +10,10 @@
 
 Joint::Joint() {}
 
-int Joint::DegreesToSteps(float Old, float New)
+int Joint::DegreesToSteps(float New)
 {
   int pulses = 0;
-  pulses = (abs(New-Old)*_Relation)/1.8;
+  pulses = (abs(New - _Old)*_Relation)/1.8;
   return pulses; 
 }
 
@@ -22,14 +22,14 @@ bool Joint::CheckSafetyMove(float J)
   return J >= _Min && J <= _Max;
 }
 
-bool Joint::AngularMove(float Old, float New, int steps, int count)
+bool Joint::AngularMove(float New, int steps, int count)
 {
   if (CheckSafetyMove(New))
   {
-    if (New > Old) digitalWrite(_PDir, _Positive);
+    if (New > _Old) digitalWrite(_PDir, _Positive);
     else digitalWrite(_PDir, not _Positive);
 
-    if (count <= steps && New != Old)
+    if (count <= steps && New != _Old)
     {
       digitalWrite(_PStep, HIGH);
       delay(_Speed);

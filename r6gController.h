@@ -14,7 +14,7 @@ class Joint
 {
   private:
     int _PDir, _PStep, _Speed;
-    float _Relation, _Min, _Max;
+    float _Relation, _Min, _Max, _Old;
     bool _Positive;
 
   public:
@@ -24,10 +24,12 @@ class Joint
     void SetSpeedRotation(int Speed) { _Speed = Speed; }
     void SetPositiveTurn(bool Positive) { _Positive = Positive; }
     void SetSoftwareLimits(float Min, float Max) { _Min = Min; _Max = Max; }
+    void SetInitialAngle(float InitialAngle) { _Old = InitialAngle; }
+    void Synchronize(float ActualAngle) { _Old = ActualAngle; }
 
-    int DegreesToSteps(float Old, float New);
+    int DegreesToSteps(float New);
     bool CheckSafetyMove(float J);
-    bool AngularMove(float Old, float New, int steps, int count);
+    bool AngularMove(float New, int steps, int count);
     void Shutdown();
 };
 
