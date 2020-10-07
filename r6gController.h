@@ -25,7 +25,6 @@ class Joint
     void SetPositiveTurn(bool Positive) { _Positive = Positive; }
     void SetSoftwareLimits(float Min, float Max) { _Min = Min; _Max = Max; }
     void SetInitialAngle(float InitialAngle) { _Old = InitialAngle; }
-    void Synchronize(float ActualAngle) { _Old = ActualAngle; }
 
     int DegreesToSteps(float New);
     bool CheckSafetyMove(float J);

@@ -29,16 +29,18 @@ bool Joint::AngularMove(float New, int steps, int count)
     if (New > _Old) digitalWrite(_PDir, _Positive);
     else digitalWrite(_PDir, not _Positive);
 
-    if (count <= steps && New != _Old)
+    if (count <= steps)
     {
       digitalWrite(_PStep, HIGH);
       delay(_Speed);
       digitalWrite(_PStep, LOW);
     }
+    else _Old = New;
+
     return true;
   }
   return false;
-}
+
 
 void Joint::Shutdown()
 {
