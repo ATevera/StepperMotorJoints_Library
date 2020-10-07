@@ -40,6 +40,7 @@ bool Joint::AngularMove(float New, int steps, int count)
     return true;
   }
   return false;
+}
 
 
 void Joint::Shutdown()
