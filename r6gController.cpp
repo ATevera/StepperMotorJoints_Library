@@ -70,7 +70,7 @@ void Robot::InitEndEffector(int EndEffector)
   digitalWrite(_EndEffector, LOW);
 }
 
-void Robot::ToggleEndEffectorState(int State)
+void Robot::ToggleEndEffectorState(bool State)
 {
   /*Toma el parámetro State para cambiar el estado del efector final. */
   if (State != _EFState)

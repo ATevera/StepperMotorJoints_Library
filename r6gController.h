@@ -36,7 +36,8 @@ class Robot
 {
   private:
     String _RobotName; 
-    int _EndEffector, _EFState = 0;
+    int _EndEffector;
+    bool _EFState = 0;
   public:
     Robot();
     String SetRobotName(String Name) { _RobotName = Name; }
@@ -45,6 +46,6 @@ class Robot
 
     int MaxDegrees(int Pulsos[6]);
     void InitEndEffector(int EndEffector);
-    void ToggleEndEffectorState(int State);
+    void ToggleEndEffectorState(bool State);
 };
 #endif
