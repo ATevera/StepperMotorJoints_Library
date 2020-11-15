@@ -63,8 +63,17 @@ int Robot::MaxDegrees(int Pulsos[6])
   return max(max3,max4);
 }
 
-void Robot::InitEndEffector()
+void Robot::InitEndEffector(int EndEffector)
 {
+  _EndEffector = EndEffector;
   pinMode(_EndEffector, OUTPUT);
   digitalWrite(_EndEffector, LOW);
+}
+
+void Robot::ToggleEndEffectorState(int State)
+{
+  /*Toma el parámetro State para cambiar el estado del efector final. */
+  bool pinState = LOW;
+  if (State == 1) pinState = HIGH;
+  digitalWrite(_EndEffector, pinState);
 }

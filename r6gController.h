@@ -41,11 +41,10 @@ class Robot
     Robot();
     String SetRobotName(String Name) { _RobotName = Name; }
     String GetRobotName() {return _RobotName;}
-    void SetEndEffector(int EndEffector) { _EndEffector = EndEffector; }
+    //void SetEndEffector(int EndEffector) { _EndEffector = EndEffector; }
 
     int MaxDegrees(int Pulsos[6]);
-    void InitEndEffector();
+    void InitEndEffector(int EndEffector);
+    void ToggleEndEffectorState(int State);
 };
 #endif
-
-// dir, step, delay, steps, giro, rm
