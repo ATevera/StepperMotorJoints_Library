@@ -69,9 +69,3 @@ void Robot::InitEndEffector(int EndEffector)
   pinMode(_EndEffector, OUTPUT);
   digitalWrite(_EndEffector, LOW);
 }
-
-void Robot::ToggleEndEffectorState(bool State)
-{
-  /*Toma el parámetro State para cambiar el estado del efector final. */
-    digitalWrite(_EndEffector, State);
-}
