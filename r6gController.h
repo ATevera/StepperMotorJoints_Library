@@ -36,7 +36,7 @@ class Robot
 {
   private:
     String _RobotName; 
-    int _EndEffector;
+    int _EndEffector, EF_State = 0;
   public:
     Robot();
     String SetRobotName(String Name) { _RobotName = Name; }
